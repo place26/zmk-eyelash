@@ -26,6 +26,15 @@
     trigger-period-ms = <16>;
 };
 
+&mt {
+    label = "HOMEROW_MODS";
+    compatible = "zmk,behavior-hold-tap";
+    flavor = "tap-preferred";
+    tapping-term-ms = <240>;
+    quick-tap-ms = <180>;
+    global-quick-tap;
+};
+
 / {
     behaviors {
         td0: td0 {
