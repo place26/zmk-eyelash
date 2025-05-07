@@ -44,7 +44,7 @@ layers:
   - {t: /, s: '?'}
   - \
   - {t: '$$mdi:keyboard-return$$', h: Fn&BT}
-  - {t: '$$mdi:keyboard-esc$$', h: 'Hyper+$$mdi:apple-keyboard-caps$$'}
+  - $$mdi:apple-keyboard-caps$$
   - {t: '$$mdi:keyboard-tab$$', h: RAISE}
   - {t: '$$mdi:keyboard-space$$', h: LOWER}
   - {t: '$$mdi:backspace$$', type: backspace}
