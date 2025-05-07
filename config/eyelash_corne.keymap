@@ -50,30 +50,80 @@
         tap-ms = <100>;
     };
 
+    combos {
+        compatible = "zmk,combos";
+
+        enter_combo {
+            bindings = <&kp ENTER>;
+            key-positions = <23 24 25>;
+            layers = <0 1 5>;
+        };
+
+        nav_combo {
+            bindings = <&tog 4>;
+            key-positions = <8 9 10>;
+            layers = <4 0>;
+        };
+
+        num_combo {
+            bindings = <&tog 5>;
+            key-positions = <37 38 39>;
+            layers = <5 0>;
+        };
+    };
+
+    macros {
+        stylist_email: stylist_email {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none &kp S &kp DOT &kp S &kp T &kp Y &kp L &kp I &kp S &kp T &kp AT &kp G &kp M &kp A &kp I &kp L &kp DOT &kp C &kp O &kp M>;
+            label = "STYLIST_EMAIL";
+        };
+
+        puma_email: puma_email {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none &kp P &kp U &kp M &kp A &kp N1 &kp N8 &kp N9 &kp N6 &kp N1 &kp N0 &kp AT &kp G &kp M &kp A &kp I &kp L &kp DOT &kp C &kp O &kp M>;
+            label = "PUMA_EMAIL";
+        };
+
+        xtdig_gmail: xtdig_gmail {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none &kp X &kp T &kp D &kp I &kp G &kp N8 &kp N3 &kp S &kp N9 &kp AT &kp G &kp M &kp A &kp I &kp L &kp DOT &kp C &kp O &kp M>;
+            label = "XTDIG_GMAIL";
+        };
+
+        xupei_email: xupei_email {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none &kp X &kp U &kp P &kp E &kp I &kp AT &kp M &kp E &kp DOT &kp C &kp O &kp M>;
+            label = "XUPEI_EMAIL";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
-        default_layer {
+        base_layer {
             display-name = "QWERTY";
             bindings = <
-&kp TAB    &kp Q  &kp W  &kp E     &kp R  &kp T                               &kp UP                &kp Y        &kp U  &kp I      &kp O    &kp P     &kp BSPC
-&td0       &kp A  &kp S  &kp D     &kp F  &kp G                     &kp LEFT  &kp ENTER  &kp RIGHT  &kp H        &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
-&kp LCTRL  &kp Z  &kp X  &kp C     &kp V  &kp B        &kp SPACE              &kp DOWN              &kp N        &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp ESC
-                         &kp LGUI  &mo 1  &lt 3 SPACE                                               &lt 3 ENTER  &mo 2  &kp RALT
+&kp TAB         &kp Q       &kp W       &kp E        &kp R         &kp T                             &kp UP                &kp Y        &kp U          &kp I        &kp O       &kp P               &kp BSPC
+&td0            &mt LGUI A  &mt LALT S  &mt LCTRL D  &mt LSHFT F   &kp G                   &kp LEFT  &kp ENTER  &kp RIGHT  &kp H        &mt RSHFT J    &mt RCTRL K  &mt RALT L  &mt RGUI SEMICOLON  &kp SQT
+&kp UNDERSCORE  &kp Z       &kp X       &kp C        &kp V         &kp B      &kp SPACE              &kp DOWN              &kp N        &kp M          &kp COMMA    &kp DOT     &kp FSLH            &kp NON_US_BACKSLASH
+                                        &lt 3 ENTER  &kp CAPSLOCK  &lt 2 TAB                                               &lt 1 SPACE  &kp BACKSPACE  &kp ENTER
             >;
 
-             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
-
-           
+            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
         };
 
         lower_layer {
             display-name = "NUMBER";
             bindings = <
-&trans  &kp N1           &kp N2          &kp N3        &kp N4        &kp N5                                         &mmv MOVE_UP                     &kp N6           &kp N7           &kp N8           &kp N9           &kp N0    &kp BSPC
-&trans  &bt BT_CLR_ALL   &bt BT_SEL 0    &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3                   &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp LEFT         &kp DOWN         &kp UP           &kp RIGHT        &kp HOME  &kp PG_UP
-&trans  &rgb_ug RGB_OFF  &rgb_ug RGB_ON  &trans        &trans        &rgb_ug RGB_EFF  &kp C_MUTE                    &mmv MOVE_DOWN                   &rgb_ug RGB_EFR  &rgb_ug RGB_SPI  &rgb_ug RGB_BRI  &rgb_ug RGB_BRD  &kp END   &kp PG_DN
-                                         &trans        &trans        &trans                                                                          &kp INS          &kp DEL          &trans
+&mkp RCLK  &none      &kp SLASH  &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9                                &mmv MOVE_UP                     &kp ESC            &kp LBRC              &kp RBRC               &none      &kp DOUBLE_QUOTES  &kp BSPC
+&mkp LCLK  &kp EQUAL  &kp STAR   &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6                &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp LC(SPACE)      &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp RIGHT  &kp SINGLE_QUOTE   &kp PG_UP
+&kp COMMA  &kp DOT    &none      &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp C_MUTE                    &mmv MOVE_DOWN                   &kp LC(LA(SPACE))  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp GRAVE  &kp TILDE          &kp PG_DN
+                                 &kp MINUS        &kp PLUS         &kp KP_NUMBER_0                                                                 &trans             &none                 &none
             >;
 
             sensor-bindings = <&scroll_encoder>;
@@ -82,25 +132,43 @@
         raise_layer {
             display-name = "SYMBOL";
             bindings = <
-&trans  &kp EXCL      &kp AT        &kp HASH   &kp DLLR   &kp PRCNT                            &mmv MOVE_UP                     &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR  &kp BSPC
-&trans  &bt BT_CLR    &mkp LCLK     &mkp MCLK  &mkp RCLK  &mkp MB4             &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT  &kp BSLH  &kp GRAVE
-&trans  &out OUT_USB  &out OUT_BLE  &none      &none      &mkp MB5   &trans                    &mmv MOVE_DOWN                   &kp UNDER  &kp PLUS   &kp LBRC   &kp RBRC  &kp PIPE  &kp TILDE
-                                    &trans     &trans     &kp SPACE                                                             &kp RET    &trans     &trans
+&mkp RCLK  &kp EXCL        &kp AT          &kp HASH  &kp DLLR   &kp PRCNT                                &mmv MOVE_UP                     &kp HOME       &kp PAGE_UP            &kp END  &kp PG_DN  &none     &kp BSPC
+&mkp LCLK  &kp CARET       &kp AMPS        &kp STAR  &kp MINUS  &kp UNDER                &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp LEFT       &kp DOWN               &kp UP   &kp RIGHT  &kp UP    &none
+&none      &kp LG(LS(N3))  &kp LC(LS(N4))  &none     &none      &kp LA(SPACE)  &trans                    &mmv MOVE_DOWN                   &kp DEL        &kp BSPC               &none    &kp LEFT   &kp DOWN  &kp RIGHT
+                                           &none     &none      &kp SPACE                                                                 &kp LC(SPACE)  &kp LC(LA(LS(SPACE)))  &none
             >;
 
             sensor-bindings = <&scroll_encoder>;
         };
 
-        layer_3 {
-            display-name = "Fn";
+        adjust_layer {
+            display-name = "Fn and BT";
             bindings = <
-&studio_unlock  &kp F1      &kp F2     &kp F3       &kp F4     &kp F5                                  &mmv MOVE_UP                     &kp F6       &kp F7     &kp F8       &kp F9      &kp F10          &kp F11
-&trans          &trans      &mkp LCLK  &mkp MCLK    &mkp RCLK  &mkp MB4                &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &bootloader  &mkp LCLK  &mkp MCLK    &mkp RCLK   &kp PRINTSCREEN  &kp F12
-&trans          &sys_reset  &trans     &bootloader  &trans     &mkp MB5  &kp C_MUTE                    &mmv MOVE_DOWN                   &trans       &trans     &bootloader  &sys_reset  &kp SCROLLLOCK   &kp PAUSE_BREAK
-                                       &trans       &trans     &trans                                                                   &trans       &trans     &trans
+&studio_unlock  &bootloader     &sys_reset      &none         &none         &none                                       &mmv MOVE_UP                     &kp F7   &kp F8   &kp F9   &sys_reset  &bootloader      &none
+&out OUT_BLE    &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp F4   &kp F5   &kp F6   &none       &rgb_ug RGB_EFR  &rgb_ug RGB_EFF
+&out OUT_USB    &bt BT_CLR_ALL  &stylist_email  &puma_email   &xtdig_gmail  &xupei_email  &kp C_MUTE                    &mmv MOVE_DOWN                   &kp F1   &kp F2   &kp F3   &none       &rgb_ug RGB_ON   &rgb_ug RGB_OFF
+                                                &lt 3 ENTER   &caps_word    &none                                                                        &kp F10  &kp F11  &kp F12
             >;
 
             sensor-bindings = <&scroll_encoder>;
+        };
+
+        navigation_layer {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans          &trans    &trans    &trans  &trans     &trans    &trans
+&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &kp UP    &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans            &trans          &trans    &trans    &trans  &kp LEFT   &kp DOWN  &kp RIGHT
+                        &trans  &trans  &trans                                    &trans    &trans    &tog 4
+            >;
+        };
+
+        numeric_layer {
+            bindings = <
+&none      &none      &kp SLASH  &none      &none     &none                   &trans          &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp SLASH  &none      &kp BACKSPACE
+&none      &kp EQUAL  &kp STAR   &none      &none     &none           &trans  &trans  &trans  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp STAR   &kp EQUAL  &none
+&kp COMMA  &kp DOT    &none      &none      &none     &none  &none            &trans          &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp ENTER  &kp DOT    &kp COMMA
+                                 &kp MINUS  &kp PLUS  &none                                   &kp KP_NUMBER_0  &none            &tog 0
+            >;
         };
     };
 };
