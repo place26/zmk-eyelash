@@ -11,7 +11,6 @@
 #include <dt-bindings/zmk/rgb.h>
 
 &mmv_input_listener { input-processors = <&zip_xy_scaler 2 1>; };
-
 &msc_input_listener { input-processors = <&zip_scroll_scaler 2 1>; };
 
 &msc {
@@ -26,6 +25,7 @@
     trigger-period-ms = <16>;
 };
 
+// homerow_mods의 정상 작동을 위한 설정 추가 함
 &mt {
     label = "HOMEROW_MODS";
     compatible = "zmk,behavior-hold-tap";
@@ -127,7 +127,7 @@
         };
 
         lower_layer {
-            display-name = "NUMBER";
+            display-name = "LOWER";
             bindings = <
 &mkp RCLK  &none      &kp SLASH  &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9                                &mmv MOVE_UP                     &kp ESC            &kp LBRC              &kp RBRC               &none      &kp DOUBLE_QUOTES  &kp BSPC
 &mkp LCLK  &kp EQUAL  &kp STAR   &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6                &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp LC(SPACE)      &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp RIGHT  &kp SINGLE_QUOTE   &kp PG_UP
@@ -139,7 +139,7 @@
         };
 
         raise_layer {
-            display-name = "SYMBOL";
+            display-name = "RAISE";
             bindings = <
 &mkp RCLK  &kp EXCL        &kp AT          &kp HASH  &kp DLLR   &kp PRCNT                                &mmv MOVE_UP                     &kp HOME       &kp PAGE_UP            &kp END  &kp PG_DN  &none     &kp BSPC
 &mkp LCLK  &kp CARET       &kp AMPS        &kp STAR  &kp MINUS  &kp UNDER                &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp LEFT       &kp DOWN               &kp UP   &kp RIGHT  &kp UP    &none
@@ -151,7 +151,7 @@
         };
 
         adjust_layer {
-            display-name = "Fn and BT";
+            display-name = "Fn&BT";
             bindings = <
 &studio_unlock  &bootloader     &sys_reset      &none         &none         &none                                       &mmv MOVE_UP                     &kp F7   &kp F8   &kp F9   &sys_reset  &bootloader      &none
 &out OUT_BLE    &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp F4   &kp F5   &kp F6   &none       &rgb_ug RGB_EFR  &rgb_ug RGB_EFF
@@ -163,6 +163,7 @@
         };
 
         navigation_layer {
+            display-name = "NAVI"
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans                    &trans          &trans    &trans    &trans  &trans     &trans    &trans
 &trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &kp UP    &trans
@@ -172,6 +173,7 @@
         };
 
         numeric_layer {
+            display-name = "CAL"
             bindings = <
 &none      &none      &kp SLASH  &none      &none     &none                   &trans          &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp SLASH  &none      &kp BACKSPACE
 &none      &kp EQUAL  &kp STAR   &none      &none     &none           &trans  &trans  &trans  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp STAR   &kp EQUAL  &none
