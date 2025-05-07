@@ -29,7 +29,7 @@ layers:
   - {t: L, h: '$$mdi:apple-keyboard-option$$'}
   - {t: ;, h: RGUI, s: ':'}
   - {t: '''', s: '"'}
-  - {t: 'Gui+Alt+Ctl+$$mdi:apple-keyboard-shift$$', h: '$$mdi:gesture-tap-hold$$'}
+  - '&td0'
   - Z
   - X
   - C
@@ -44,10 +44,10 @@ layers:
   - {t: /, s: '?'}
   - \
   - {t: '$$mdi:keyboard-return$$', h: Fn&BT}
-  - $$mdi:apple-keyboard-caps$$
+  - $$mdi:keyboard-esc$$
   - {t: '$$mdi:keyboard-tab$$', h: RAISE}
   - {t: '$$mdi:keyboard-space$$', h: LOWER}
-  - {t: '$$mdi:backspace$$', type: backspace}
+  - $$mdi:keyboard-space$$
   - {t: '$$mdi:keyboard-return$$', type: enter}
   LOWER:
   - $$mdi:mouse-right-click-outline$$
@@ -72,7 +72,7 @@ layers:
   - {t: '$$mdi:menu-left$$', s: '$$mdi:mouse$$'}
   - $$mdi:mouse-left-click-outline$$
   - {t: '$$mdi:menu-right$$', s: '$$mdi:mouse$$'}
-  - Ctl+$$mdi:keyboard-space$$
+  - {t: 'Ctl+Gui+Alt+$$mdi:apple-keyboard-shift$$', h: '$$mdi:gesture-tap-hold$$'}
   - (
   - )
   - $$mdi:arrow-right-bold$$
@@ -129,7 +129,7 @@ layers:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: Gui+Sft+3, s: Gui+Sft+#}
-  - {t: Ctl+Sft+4, s: Ctl+Sft+$}
+  - Gui+Sft+4
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - Alt+$$mdi:keyboard-space$$
@@ -143,7 +143,7 @@ layers:
   - $$mdi:arrow-right-bold$$
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: 'Sft+$$mdi:keyboard-space$$', h: RAISE, type: held}
+  - {t: '$$mdi:keyboard-tab$$', h: RAISE, type: held}
   - Ctl+$$mdi:keyboard-space$$
   - Meh+$$mdi:keyboard-space$$
   - {t: '$$mdi:minus-circle-outline$$', type: none}
