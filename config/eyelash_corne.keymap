@@ -11,6 +11,7 @@
 #include <dt-bindings/zmk/rgb.h>
 
 &mmv_input_listener { input-processors = <&zip_xy_scaler 2 1>; };
+
 &msc_input_listener { input-processors = <&zip_scroll_scaler 2 1>; };
 
 &msc {
@@ -26,6 +27,7 @@
 };
 
 // homerow_mods의 정상 작동을 위한 설정 추가 함
+
 &mt {
     label = "HOMEROW_MODS";
     compatible = "zmk,behavior-hold-tap";
@@ -118,8 +120,8 @@
             display-name = "QWERTY";
             bindings = <
 &kp MINUS       &kp Q       &kp W       &kp E        &kp R         &kp T                             &kp UP                &kp Y        &kp U          &kp I        &kp O       &kp P               &kp BSPC
-&td0            &mt LGUI A  &mt LALT S  &mt LCTRL D  &mt LSHFT F   &kp G                   &kp LEFT  &kp ENTER  &kp RIGHT  &kp H        &mt RSHFT J    &mt RCTRL K  &mt RALT L  &mt RGUI SEMICOLON  &kp SQT
-&kp UNDERSCORE  &kp Z       &kp X       &kp C        &kp V         &kp B      &kp SPACE              &kp DOWN              &kp N        &kp M          &kp COMMA    &kp DOT     &kp FSLH            &kp NON_US_BACKSLASH
+&kp UNDERSCORE  &mt LGUI A  &mt LALT S  &mt LCTRL D  &mt LSHFT F   &kp G                   &kp LEFT  &kp ENTER  &kp RIGHT  &kp H        &mt RSHFT J    &mt RCTRL K  &mt RALT L  &mt RGUI SEMICOLON  &kp SQT
+&kp LSHFT       &kp Z       &kp X       &kp C        &kp V         &kp B      &kp SPACE              &kp DOWN              &kp N        &kp M          &kp COMMA    &kp DOT     &kp FSLH            &kp NON_US_BACKSLASH
                                         &lt 3 ENTER  &kp CAPSLOCK  &lt 2 TAB                                               &lt 1 SPACE  &kp BACKSPACE  &kp ENTER
             >;
 
@@ -141,10 +143,10 @@
         raise_layer {
             display-name = "RAISE";
             bindings = <
-&mkp RCLK  &kp EXCL        &kp AT          &kp HASH  &kp DLLR   &kp PRCNT                                &mmv MOVE_UP                     &kp HOME       &kp PAGE_UP            &kp END  &kp PG_DN  &none     &kp BSPC
-&mkp LCLK  &kp CARET       &kp AMPS        &kp STAR  &kp MINUS  &kp UNDER                &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp LEFT       &kp DOWN               &kp UP   &kp RIGHT  &kp UP    &none
-&none      &kp LG(LS(N3))  &kp LC(LS(N4))  &none     &none      &kp LA(SPACE)  &trans                    &mmv MOVE_DOWN                   &kp DEL        &kp BSPC               &none    &kp LEFT   &kp DOWN  &kp RIGHT
-                                           &none     &none      &kp SPACE                                                                 &kp LC(SPACE)  &kp LC(LA(LS(SPACE)))  &none
+&mkp RCLK  &kp EXCL        &kp AT          &kp HASH  &kp DLLR   &kp PRCNT                                  &mmv MOVE_UP                     &kp HOME       &kp PAGE_UP            &kp END  &kp PG_DN  &none     &kp BSPC
+&mkp LCLK  &kp CARET       &kp AMPS        &kp STAR  &kp MINUS  &kp UNDER                  &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp LEFT       &kp DOWN               &kp UP   &kp RIGHT  &kp UP    &none
+&none      &kp LG(LS(N3))  &kp LC(LS(N4))  &none     &none      &kp LA(SPACE)    &trans                    &mmv MOVE_DOWN                   &kp DEL        &kp BSPC               &none    &kp LEFT   &kp DOWN  &kp RIGHT
+                                           &none     &none      &lt 2 LS(SPACE)                                                             &kp LC(SPACE)  &kp LC(LA(LS(SPACE)))  &none
             >;
 
             sensor-bindings = <&scroll_encoder>;
@@ -163,20 +165,20 @@
         };
 
         navigation_layer {
-            display-name = "NAVI"
+            display-name = "NAVI";
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans          &trans    &trans    &trans  &trans     &trans    &trans
-&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &kp UP    &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans            &trans          &trans    &trans    &trans  &kp LEFT   &kp DOWN  &kp RIGHT
-                        &trans  &trans  &trans                                    &trans    &trans    &tog 4
+&mkp RCLK  &none  &none  &none  &none  &none                           &mmv MOVE_UP                     &none       &none          &none   &none      &none     &kp BACKSPACE
+&mkp LCLK  &none  &none  &none  &none  &none           &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp LEFT    &kp DOWN       &kp UP  &kp RIGHT  &kp UP    &none
+&none      &none  &none  &none  &none  &none  &none                    &mmv MOVE_DOWN                   &kp DELETE  &kp BACKSPACE  &none   &kp LEFT   &kp DOWN  &kp RIGHT
+                         &none  &none  &none                                                            &none       &none          &tog 4
             >;
         };
 
         numeric_layer {
-            display-name = "CAL"
+            display-name = "CAL";
             bindings = <
-&none      &none      &kp SLASH  &none      &none     &none                   &trans          &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp SLASH  &none      &kp BACKSPACE
-&none      &kp EQUAL  &kp STAR   &none      &none     &none           &trans  &trans  &trans  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp STAR   &kp EQUAL  &none
+&mkp RCLK  &none      &kp SLASH  &none      &none     &none                   &trans          &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp SLASH  &none      &kp BACKSPACE
+&mkp LCLK  &kp EQUAL  &kp STAR   &none      &none     &none           &trans  &trans  &trans  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp STAR   &kp EQUAL  &none
 &kp COMMA  &kp DOT    &none      &none      &none     &none  &none            &trans          &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp ENTER  &kp DOT    &kp COMMA
                                  &kp MINUS  &kp PLUS  &none                                   &kp KP_NUMBER_0  &none            &tog 0
             >;
