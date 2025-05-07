@@ -14,7 +14,7 @@ layers:
   - O
   - P
   - {t: '$$mdi:backspace$$', type: backspace}
-  - '&td0'
+  - _
   - {t: A, h: LGUI}
   - {t: S, h: '$$mdi:apple-keyboard-option$$'}
   - {t: D, h: '$$mdi:apple-keyboard-control$$'}
@@ -29,7 +29,7 @@ layers:
   - {t: L, h: '$$mdi:apple-keyboard-option$$'}
   - {t: ;, h: RGUI, s: ':'}
   - {t: '''', s: '"'}
-  - _
+  - $$mdi:apple-keyboard-shift$$
   - Z
   - X
   - C
@@ -43,13 +43,13 @@ layers:
   - {t: ., s: '>'}
   - {t: /, s: '?'}
   - \
-  - {t: '$$mdi:keyboard-return$$', h: Fn and BT}
+  - {t: '$$mdi:keyboard-return$$', h: Fn&BT}
   - $$mdi:apple-keyboard-caps$$
-  - {t: '$$mdi:keyboard-tab$$', h: SYMBOL}
-  - {t: '$$mdi:keyboard-space$$', h: NUMBER}
+  - {t: '$$mdi:keyboard-tab$$', h: RAISE}
+  - {t: '$$mdi:keyboard-space$$', h: LOWER}
   - {t: '$$mdi:backspace$$', type: backspace}
   - {t: '$$mdi:keyboard-return$$', type: enter}
-  NUMBER:
+  LOWER:
   - $$mdi:mouse-right-click-outline$$
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: /, s: '?'}
@@ -98,7 +98,7 @@ layers:
   - {type: held}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  SYMBOL:
+  RAISE:
   - $$mdi:mouse-right-click-outline$$
   - '!'
   - '@'
@@ -143,11 +143,11 @@ layers:
   - $$mdi:arrow-right-bold$$
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:keyboard-space$$', type: held}
+  - {t: 'Sft+$$mdi:keyboard-space$$', h: RAISE, type: held}
   - Ctl+$$mdi:keyboard-space$$
   - Meh+$$mdi:keyboard-space$$
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  Fn and BT:
+  Fn&BT:
   - '&studio_unlock'
   - $$mdi:progress-download$$
   - {t: '$$mdi:backup-restore$$', type: bootloader}
@@ -190,63 +190,63 @@ layers:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - RGB ON
   - RGB OFF
-  - {t: '$$mdi:keyboard-return$$', h: Fn and BT, type: held}
+  - {t: '$$mdi:keyboard-return$$', h: Fn&BT, type: held}
   - $$mdi:alpha-w-box$$
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - F10
   - F11
   - F12
-  navigation:
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - $$mdi:arrow-left-bold$$
-  - $$mdi:arrow-down-bold$$
-  - $$mdi:arrow-up-bold$$
-  - $$mdi:arrow-right-bold$$
-  - $$mdi:arrow-up-bold$$
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - $$mdi:arrow-left-bold$$
-  - $$mdi:arrow-down-bold$$
-  - $$mdi:arrow-right-bold$$
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: navigation, h: toggle}
-  numeric:
+  NAVI:
+  - $$mdi:mouse-right-click-outline$$
   - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:menu-up$$', s: '$$mdi:mouse$$'}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:backspace$$', type: backspace}
+  - $$mdi:mouse-left-click-outline$$
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:menu-left$$', s: '$$mdi:mouse$$'}
+  - $$mdi:mouse-left-click-outline$$
+  - {t: '$$mdi:menu-right$$', s: '$$mdi:mouse$$'}
+  - $$mdi:arrow-left-bold$$
+  - $$mdi:arrow-down-bold$$
+  - $$mdi:arrow-up-bold$$
+  - $$mdi:arrow-right-bold$$
+  - $$mdi:arrow-up-bold$$
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:menu-down$$', s: '$$mdi:mouse$$'}
+  - $$mdi:backspace-reverse-outline$$
+  - {t: '$$mdi:backspace$$', type: backspace}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - $$mdi:arrow-left-bold$$
+  - $$mdi:arrow-down-bold$$
+  - $$mdi:arrow-right-bold$$
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: NAVI, h: toggle}
+  CAL:
+  - $$mdi:mouse-right-click-outline$$
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: /, s: '?'}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
@@ -259,7 +259,7 @@ layers:
   - {t: /, s: '?'}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:backspace$$', type: backspace}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - $$mdi:mouse-left-click-outline$$
   - {t: '=', s: +}
   - '*'
   - {t: '$$mdi:minus-circle-outline$$', type: none}
@@ -297,10 +297,10 @@ layers:
 combos:
 - p: [23, 24, 25]
   k: {t: '$$mdi:keyboard-return$$', type: enter}
-  l: [QWERTY, NUMBER, numeric]
+  l: [QWERTY, LOWER, CAL]
 - p: [8, 9, 10]
-  k: {t: navigation, h: toggle}
-  l: [navigation, QWERTY]
+  k: {t: NAVI, h: toggle}
+  l: [NAVI, QWERTY]
 - p: [37, 38, 39]
-  k: {t: numeric, h: toggle}
-  l: [numeric, QWERTY]
+  k: {t: CAL, h: toggle}
+  l: [CAL, QWERTY]
