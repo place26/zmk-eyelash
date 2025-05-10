@@ -123,9 +123,9 @@
         lower_layer {
             display-name = "LOWER";
             bindings = <
-&mkp RCLK  &none      &kp SLASH  &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9                           &mmv MOVE_UP                     &kp ESC                &kp LBRC              &kp RBRC               &none      &kp DOUBLE_QUOTES  &kp BSPC
-&mkp LCLK  &kp EQUAL  &kp STAR   &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6           &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &sk LC(LG(LA(LSHFT)))  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp RIGHT  &kp SINGLE_QUOTE   &kp PG_UP
-&kp COMMA  &kp DOT    &none      &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &none                    &mmv MOVE_DOWN                   &kp LC(LA(SPACE))      &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp GRAVE  &kp TILDE          &kp PG_DN
+&mkp RCLK  &none      &kp SLASH  &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9                           &mmv MOVE_UP                     &kp CAPS               &kp LBRC              &kp RBRC               &none      &kp DOUBLE_QUOTES  &kp BSPC
+&mkp LCLK  &kp EQUAL  &kp STAR   &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6           &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &sk LC(LG(LA(LSHFT)))  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &none      &kp SINGLE_QUOTE   &kp PG_UP
+&kp COMMA  &kp DOT    &none      &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &none                    &mmv MOVE_DOWN                   &none                  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp GRAVE  &kp TILDE          &kp PG_DN
                                  &kp MINUS        &kp PLUS         &kp KP_NUMBER_0                                                            &trans                 &none                 &none
             >;
         };
@@ -133,10 +133,10 @@
         raise_layer {
             display-name = "RAISE";
             bindings = <
-&mkp RCLK  &kp EXCL        &kp AT                &kp HASH  &kp DLLR   &kp PRCNT                               &mmv MOVE_UP                     &kp HOME       &kp PAGE_UP            &kp END  &kp PG_DN  &none     &kp BSPC
-&mkp LCLK  &kp CARET       &kp AMPS              &kp STAR  &kp MINUS  &kp UNDER               &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp LEFT       &kp DOWN               &kp UP   &kp RIGHT  &kp UP    &none
-&none      &kp LG(LS(N3))  &kp LG(LS(NUMBER_4))  &none     &none      &kp LA(SPACE)  &none                    &mmv MOVE_DOWN                   &kp DEL        &kp BSPC               &none    &kp LEFT   &kp DOWN  &kp RIGHT
-                                                 &none     &none      &lt 2 TAB                                                                &kp LC(SPACE)  &kp LC(LA(LS(SPACE)))  &none
+&mkp RCLK   &kp EXCL        &kp AT                &kp HASH  &kp DLLR   &kp PRCNT                               &mmv MOVE_UP                     &kp HOME       &kp PAGE_UP            &kp END  &kp PG_DN  &none     &kp BSPC
+&mkp LCLK   &kp CARET       &kp AMPS              &kp STAR  &kp LG(C)  &kp LG(V)               &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp LEFT       &kp DOWN               &kp UP   &kp RIGHT  &kp UP    &none
+&caps_word  &kp LG(LS(N3))  &kp LG(LS(NUMBER_4))  &none     &kp LG(X)  &kp LA(SPACE)  &none                    &mmv MOVE_DOWN                   &kp DEL        &kp BSPC               &none    &kp LEFT   &kp DOWN  &kp RIGHT
+                                                  &none     &none      &lt 2 TAB                                                                &kp LC(SPACE)  &kp LC(LA(LS(SPACE)))  &none
             >;
         };
 
@@ -146,7 +146,7 @@
 &studio_unlock  &bootloader     &sys_reset      &none         &none         &none                                  &mmv MOVE_UP                     &kp F7   &kp F8   &kp F9   &sys_reset  &bootloader      &none
 &out OUT_BLE    &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4           &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp F4   &kp F5   &kp F6   &none       &rgb_ug RGB_EFR  &rgb_ug RGB_EFF
 &out OUT_USB    &bt BT_CLR_ALL  &stylist_email  &puma_email   &xtdig_gmail  &xupei_email  &none                    &mmv MOVE_DOWN                   &kp F1   &kp F2   &kp F3   &none       &rgb_ug RGB_ON   &rgb_ug RGB_OFF
-                                                &lt 3 ENTER   &caps_word    &none                                                                   &kp F10  &kp F11  &kp F12
+                                                &lt 3 ENTER   &none         &none                                                                   &kp F10  &kp F11  &kp F12
             >;
         };
 
